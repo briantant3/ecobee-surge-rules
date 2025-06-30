@@ -15,9 +15,9 @@ for host in hostnames:
         for ip in ips:
             obj = ipaddress.ip_address(ip)
             if obj.version == 4:
-                rules.append(f"IP-CIDR,{ip}/32,EcobeeProxy")
+                rules.append(f"IP-CIDR,{ip}/32")
             else:
-                rules.append(f"IP-CIDR6,[{ip}]/128,EcobeeProxy")
+                rules.append(f"IP-CIDR6,[{ip}]/128")
     except Exception as e:
         rules.append(f"# {host} lookup failed: {e}")
 
