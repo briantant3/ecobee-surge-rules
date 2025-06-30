@@ -21,7 +21,7 @@ for host in hostnames:
     except Exception as e:
         rules.append(f"# {host} lookup failed: {e}")
 
-rules.append(f"DOMAIN-KEYWORD,ecobee")
+#rules.append(f"DOMAIN-KEYWORD,ecobee")
 rules = sorted(set(rules))
 with open("ecobee-ipcidr.txt", "w") as f:
     f.write("\n".join(rules))
